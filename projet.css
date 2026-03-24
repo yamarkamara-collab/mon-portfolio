@@ -1,53 +1,97 @@
-/* Improved responsive design for projet.css */
+.* {  /* Apply to all elements */
+  box-sizing: border-box;  /* Ensure padding and border are included in element's total width and height */
+}
 
-/* Base styles */
+html {
+  font-size: 100%; /* Base font size */
+}
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+  margin: 0;  /* Reset default margin */
+  font-family: Arial, sans-serif; /* Default font */
+  line-height: 1.6; /* Improve readability */
 }
 
-.container {
-    width: 100%;
-    padding: 0 15px;
-    margin: auto;
+/* Header styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
+  padding: 10px 20px;
 }
 
-/* Mobile styles */
-@media (max-width: 600px) {
-    .header {
-        text-align: center;
-    }
-    .nav {
-        display: block;
-        width: 100%;
-    }
-    .content {
-        font-size: 14px;
-    }
+/* Flex layout for main content */
+.main-content {
+  display: flex;
+  flex-direction: column; /* Mobile-first: stack items vertically */
+  margin-top: 60px; /* Space for fixed header */ 
 }
 
-/* Tablet styles */
-@media (min-width: 601px) and (max-width: 900px) {
-    .nav {
-        display: flex;
-        justify-content: space-between;
-    }
-    .content {
-        font-size: 16px;
-    }
+/* Responsive typography */
+p {
+  font-size: 1rem; /* Base text size */
+  margin-bottom: 1.5em;
 }
 
-/* Desktop styles */
-@media (min-width: 901px) {
-    .content {
-        font-size: 18px;
-    }
-} 
+/* Media Queries for responsive design */
+@media (min-width: 480px) {
+  p {
+    font-size: 1.1rem; /* Slightly larger for small tablets */
+  }
+}
 
-/* Additional breakpoints for larger screens */
-@media (min-width: 1201px) {
-    .content {
-        max-width: 1200px;
-        margin: auto;
-    }
+@media (min-width: 768px) {
+  .main-content {
+    flex-direction: row; /* Switch to horizontal layout */
+  }
+  p {
+    font-size: 1.2rem; /* Larger for larger tablets */
+  }
+}
+
+@media (min-width: 1024px) {
+  p {
+    font-size: 1.3rem; /* Larger for desktops */
+  }
+}
+
+@media (min-width: 1200px) {
+  p {
+    font-size: 1.4rem; /* Largest for wide screens */
+  }
+}
+
+/* Responsive grid layout for portfolio items */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Responsive forms */
+.form-group {
+  margin-bottom: 15px;
+}
+
+input, textarea {
+  width: 100%; /* Full width */
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 15px;
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
 }
