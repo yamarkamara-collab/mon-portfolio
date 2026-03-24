@@ -1,132 +1,53 @@
+/* Improved responsive design for projet.css */
+
+/* Base styles */
 body {
-    font-family: "Noto Sans";
-    margin-left: 60px;
-    background-image: url(image.png);
-
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-p {
-    width: 500px;
-    color: rgb(58, 57, 57);
-}
-
-.acceuil {
-    color: rgb(12, 228, 217);
-}
-
-.image {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-
-}
-
-.image:hover {
-    transform: scale(1.1);
-    transition: transform 0.3s ease;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-}
-
-/* Style de base pour le conteneur de la barre de progression */
 .container {
-    width: 80%;
-    margin: 20px auto;
-}
-
-/* Style pour chaque barre de progression */
-.bar {
-    background-color: #44444470;
-    border-radius: 25px;
-    margin: 10px 0;
-    position: relative;
-}
-
-/* Style pour l'information de chaque barre */
-.info {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    font-weight: bold;
-}
-
-/* Style pour la grille de projets */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    margin: 20px 0;
-}
-.project-grid img {
     width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-img:hover{
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-.project-image {
-    width: 30px;
-    height: auto;
-    border-radius: 0px;
-}
-.date::after{
-    content: ":";
-    position: absolute;
-    font-size: larger, bold;
-    
-}
-.date{
-    text-decoration: underline;
-}
-/* Style pour le formulaire de contact */
-form {
+    padding: 0 15px;
     margin: auto;
-    padding: 20px;
-    background-color: #716ab125;
-    border-radius: 10px;
-    width: 400px;
-    overflow: visible;
 }
-.envoie{
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: 150px;
-}
-input, select{
-    border-color: rgb(95,202,38);
 
-}
-input[type="text"], input[type="email"]{
-    width: 50%;
-    height: 100%;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: solid 2px greenyellow;
-    
-}
-@media screen and (max-width: 768px) {
-    body {
-        margin-left: 20px;
+/* Mobile styles */
+@media (max-width: 600px) {
+    .header {
+        text-align: center;
     }
-    .project-grid {
-        grid-template-columns: 1fr;
-    }
-    form {
+    .nav {
+        display: block;
         width: 100%;
     }
-}
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    .project-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    form {
-        width: 80%;
+    .content {
+        font-size: 14px;
     }
 }
 
+/* Tablet styles */
+@media (min-width: 601px) and (max-width: 900px) {
+    .nav {
+        display: flex;
+        justify-content: space-between;
+    }
+    .content {
+        font-size: 16px;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 901px) {
+    .content {
+        font-size: 18px;
+    }
+} 
+
+/* Additional breakpoints for larger screens */
+@media (min-width: 1201px) {
+    .content {
+        max-width: 1200px;
+        margin: auto;
+    }
+}
